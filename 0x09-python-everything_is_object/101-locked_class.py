@@ -4,7 +4,7 @@
 
 class LockedClass:
     """creating a locked class that
-    prevens creaion of another prop
+    prevents creat`ion of another prop
     """
 
     __slots__ = ["first_name"]
