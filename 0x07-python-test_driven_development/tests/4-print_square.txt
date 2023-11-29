@@ -1,0 +1,67 @@
+============================
+How to use 4-print_square.py
+===========================
+
+``print_square(size)`` is a function to use the paramter size
+to print a square with # sign where size is both height and width
+
+Usage
+=====
+
+print_square(size) its value acn only be int and greater and equal to 0
+
+::
+
+    >>> print_square = __import__('4-print_square').print_square
+    >>> print_square(4)
+    ####
+    ####
+    ####
+    ####
+
+print if size is 0
+
+::
+
+    >>> print_square(0)
+
+if size is 2
+
+::
+
+    >>> print_square(2)
+    ##
+    ##
+
+Invalid size
+============
+
+if the value is negative
+
+::
+
+    >>> print_square(-1)
+    Traceback (most recent call last):
+    ValueError: size must be >= 0
+
+if value is not int
+
+::
+
+    >>> print_square("I am Muoye")
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+if value is float or negative-float
+
+::
+
+    >>> print_square(3.5)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+::
+
+    >>> print_square(-3.5)
+    Traceback (most recent call last):
+    TypeError: size must be an integer

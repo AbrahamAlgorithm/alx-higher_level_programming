@@ -1,0 +1,53 @@
+===========================
+How to use 3-say_my_name.py
+===========================
+
+``def say_my_name(first_name, last_name="")`` collects two arguments
+the first_name and last_name
+
+Usage
+=====
+
+``def say_my_name(...)`` is the two arguments and only the first argument
+is compulsory and second argument is pre-defined to empty string
+
+::
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+    >>> say_my_name("Mustapha", "Oyebamiji")
+    My name is Mustapha Oyebamiji
+
+You can only input the first_name
+
+::
+
+    >>> say_my_name("Mustapha")
+    My name is Mustapha 
+
+Invalid name
+============
+
+the both name must be an instance of a string
+or else it raises the TypeError
+
+if any of the name is number or none
+
+::
+
+    >>> say_my_name(1, "Mustapha")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+::
+
+    >>> say_my_name("Mustapha", 1)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+if both is not string
+
+::
+
+    >>> say_my_name(1, 1)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string

@@ -1,0 +1,58 @@
+===========================
+Usage of 100-matrix_mul.py
+==========================
+
+``def matrix_mul(m_a, m_b)`` is to find the product of
+two matrices using NumPy
+
+======
+Usage
+======
+
+::
+
+    >>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+    >>> print(lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
+    [[ 7 10]
+     [15 22]]
+
+::
+
+    >>> print(lazy_matrix_mul([[1, 2]], [[3, 4], [5, 6]]))
+    [[13 16]]
+
+=========
+Bad Usage
+=========
+
+if nuumber of columns of Matrix A does not equal to number of
+rows of Matrix B;the matric can't be multiplied
+
+::
+
+    >>> print(lazy_matrix_mul([[3, 4], [5, 6]], [[1, 2]]))
+    Traceback (most recent call last):
+    ValueError: shapes (2,2) and (1,2) not aligned: 2 (dim 1) != 1 (dim 0)
+
+if matrix contain string
+
+::
+
+    >>> print(lazy_matrix_mul([[1, 2], [3, 'q']], [[1, 2], [3, 4]]))
+    Traceback (most recent call last):
+    TypeError: invalid data type for einsum
+
+if the matrix is not a list of list
+
+::
+
+    >>> print(lazy_matrix_mul("mus", "taP"))
+    Traceback (most recent call last):
+    ValueError: Scalar operands are not allowed, use '*' instead
+
+Test for empty list
+
+::
+
+    >>> print(lazy_matrix_mul([[]],[]))
+    [0.]
