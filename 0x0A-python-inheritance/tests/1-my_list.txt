@@ -1,0 +1,51 @@
+checking for module docstring:
+    >>> m = __import__("1-my_list").__doc__
+    >>> len(m) > 1
+    True
+
+checking clas docstring:
+    >>> c = __import__("1-my_list").MyList.__doc__
+    >>> len(c) > 1
+    True
+
+checking method for docstring:
+    >>> mod = __import__("1-my_list").MyList.print_sorted.__doc__
+    >>> len(mod) > 1
+    True
+
+checking if it is subclass of list:
+    >>> MyList = __import__('1-my_list').MyList
+    >>> issubclass(MyList, list)
+    True
+
+check for empty list:
+    >>> l = MyList()
+    >>> l.print_sorted()
+    []
+
+checking if appending is work:
+    >>> l.append(1)
+    >>> l.append(2)
+    >>> l.append(3)
+    >>> l.append(4)
+    >>> print(l)
+    [1, 2, 3, 4]
+
+checking already sorted list:
+    >>> l.print_sorted()
+    [1, 2, 3, 4]
+
+checking for negative:
+    >>> l.append(-1)
+    >>> l.print_sorted()
+    [-1, 1, 2, 3, 4]
+    >>> print(l)
+    [1, 2, 3, 4, -1]
+
+checking for multiple argument:
+    >>> l = MyList()
+    >>> l.append(1)
+    >>> l.print_sorted(l)
+    Traceback (most recent call last):
+    ...
+    TypeError: print_sorted() takes 1 positional argument but 2 were given

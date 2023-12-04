@@ -1,0 +1,19 @@
+Testing for proper integer:
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+    >>> yab = BaseGeometry()
+    >>> yab.integer_validator("my_int", 12)
+
+Testing if the value is not int:
+    >>> yab.integer_validator("my_int", 'puppy')
+    Traceback (most recent call last):
+    TypeError: my_int must be an integer
+
+Testing if the value is 0
+    >>> yab.integer_validator("my_int", 0)
+    Traceback (most recent call last):
+    ValueError: my_int must be greater than 0
+
+Testing if the value is < 0:
+    >>> yab.integer_validator("distance", -4)
+    Traceback (most recent call last):
+    ValueError: distance must be greater than 0
