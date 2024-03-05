@@ -1,18 +1,25 @@
-#!/usr/bin/python3
-"""Find a Peak in a List"""
 def find_peak(list_of_integers):
-    """Find a Peak in a list
+    """Finds a peak in a list of unsorted integers."""
+    if not list_of_integers:
+        return None
+    
+    # Get the length of the list
+    n = len(list_of_integers)
+    
+    # Handle edge cases (first and last elements)
+    if n == 1:
+        return list_of_integers[0]
+    if n == 2:
+        return max(list_of_integers)
+    
+    # Binary search to find a peak
+    left, right = 0, n - 1
+    while left < right:
+        mid = (left + right) // 2
+        if list_of_integers[mid] < list_of_integers[mid + 1]:
+            left = mid + 1
+        else:
+            right = mid
+    
+    return list_of_integers[left]
 
-    Args:
-        list_of_integers: list of int
-    Returns:
-        the value or None
-    """
-    lis = list_of_integers
-    b = len(lis)
-    if (b <= 2):
-        return (None)
-    for i in range(1, b - 1):
-	    if (lis[i - 1] <= lis[i] >= lis[i + 1]):
-	        return (lis[i])
-    return (None)
